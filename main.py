@@ -80,12 +80,15 @@ while True:
         p1_pos = player_choice(board)
         if p1_pos != 0:
             place_marker(board, player1, p1_pos)
-        else:
+        elif p1_pos == 0:
             print('Please choose another position!')
             p1_pos = player_choice(board)
             place_marker(board, player1, p1_pos)
+        elif win_check(board, player1):
+            print('Player 1 win!')
+            break
         display_board(board)
-        
+
         # Player2 turn
         p2_pos = player_choice(board)
         if p2_pos != 0:
@@ -94,7 +97,10 @@ while True:
             print('Please choose another position!')
             p2_pos = player_choice(board)
             place_marker(board, player2, p2_pos)
+        elif win_check(board, player2):
+            print('Player 2 win!')
+            break
         display_board(board)
-        
+
     if not replay():
         break
