@@ -8,7 +8,7 @@ Python 3.7
 
 ## How to use it
 
-'''
+```
 python main.py
-'''
+```
 
